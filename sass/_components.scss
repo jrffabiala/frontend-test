@@ -1,0 +1,50 @@
+// sidebar
+.sidebar {
+  .search {
+  
+  
+    display: flex;
+
+    &__input {
+      font-family: inherit;
+      font-size: 1.6rem;
+      border: none;
+      color: var(--color-light-grey);
+      width: 80%;
+      letter-spacing: .1rem;
+    }
+  
+    ::placeholder {
+      color: var(--color-light-grey);
+      font-weight: 100;
+    }
+  
+    &__button {
+      border: none;
+      background-color: var(--color-white);
+      color: var(--color-light-grey);
+    }
+  
+    &__icon {
+      height: 1.75rem;
+      width: 1.75rem;
+      margin-right: 1.3rem;
+      fill: var(--color-light-grey);
+    }
+  }
+
+  .side-nav {
+    &__item {
+  
+    }
+  
+    &__link {
+      
+    }
+  
+    &__icon {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+}

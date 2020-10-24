@@ -6,9 +6,8 @@
         
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
         
-        <title>trillo &mdash; Your all-in-one booking app</title>
+        <title>Front-end Test</title>
     </head>
     <body>
         <div class="container">
@@ -22,8 +21,16 @@
                 </button>
                 <input type="text" class="search__input" placeholder="Search">
               </form>
+              <div class="user-profile">
+                <img src="img/user1.png" alt="Profile Photo" class="user-profile__user-photo">
+                <div class="user-detail">
+                  <span class="user-detail__username">Tanya Shah</span>
+                  <span class="user-detail__job-title">Photographer</span>
+                </div>
+              </div>
+
               <ul class="side-nav">
-                <li class="side-nav__item">
+                <li class="side-nav__item side-nav__item--active">
                   <a href="#" class="side-nav__link">
                     <svg class="side-nav__icon">
                       <use xlink:href="img/sprite.svg#icon-clock"></use>
@@ -45,6 +52,7 @@
                       <use xlink:href="img/sprite.svg#icon-mail"></use>
                     </svg>
                     <span>Message</span>
+                    <span class="side-nav__notif">5</span>
                   </a>
                 </li>
                 <li class="side-nav__item">
@@ -55,6 +63,8 @@
                     <span>Gallery</span>
                   </a>
                 </li>
+              </ul>
+              <ul class="side-nav">
                 <li class="side-nav__item">
                   <a href="#" class="side-nav__link">
                     <svg class="side-nav__icon">
@@ -73,9 +83,134 @@
                 </li>
               </ul>
             </nav>
-            <main class="main-view">
-              Posts
-            </main>
+            <div class="main-view">
+              <div class="feed">
+                <div class="story">
+                  <textarea class="story__textarea" rows="4" cols="30">Write something...</textarea>
+                  <div class="story__buttons">
+                    <div class="story__icons">
+                      <svg class="story__icon">
+                        <use xlink:href="img/sprite.svg#icon-attachment"></use>
+                      </svg>
+                      <svg class="story__icon">
+                        <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+                      </svg>
+                      <svg class="story__icon">
+                        <use xlink:href="img/sprite.svg#icon-lifebuoy"></use>
+                      </svg>
+                    </div>
+                    <button type="submit" class="story__post-button">
+                      Post
+                    </button>
+                  </div>
+                </div>
+                <div class="posts">
+                  <div class="post">
+                    <div class="post__user">
+                      <img src="img/user2.jpg" alt="User 2" class="post__user-photo">
+                      <div class="post__user-details">
+                        <p class="post__username">Barbara Smith</p>
+                        <p class="post__user-title">Photographer</p>
+                      </div>
+                      <p class="post__elapsed">35 mins ago</p>
+                    </div>
+                    <blockquote class="post__text">
+                      Best ever photoshoot for new female fashion show, enjoyed a lot. 
+                      Really excited to show some event information.
+                    </blockquote>
+                    <div class="post__icons">
+                      <a href="#" class="post__link">
+                        <svg class="post__icon">
+                          <use xlink:href="img/sprite.svg#icon-thumbs-up"></use>
+                        </svg>
+                        <span>26</span>
+                      </a>
+                      <a href="#" class="post__link">
+                        <svg class="post__icon">
+                          <use xlink:href="img/sprite.svg#icon-typing"></use>
+                        </svg>
+                        <span>05</span>
+                      </a>
+                      <a href="#" class="post__link">
+                        <svg class="post__icon">
+                          <use xlink:href="img/sprite.svg#icon-share"></use>
+                        </svg>
+                        <span>01</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="post">
+                    <div class="post__user">
+                      <img src="img/user3.jpg" alt="User 3" class="post__user-photo">
+                      <div class="post__user-details">
+                        <p class="post__username">Georgina Jones</p>
+                        <p class="post__user-title">Fashion Designer</p>
+                      </div>
+                      <p class="post__elapsed">55 mins ago</p>
+                    </div>
+                    <blockquote class="post__text">
+                      My Clicked Designs from the show
+                    </blockquote>
+                    <div class="post__photos">
+                      <img src="img/user4.jpg" alt="User 4" class="post__photo">
+                      <img src="img/user5.jpg" alt="User 5" class="post__photo">
+                      <img src="img/user6.jpg" alt="User 6" class="post__photo">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sidebar-right">
+                <div class="popular">
+                  <img src="img/user7.jpg" alt="User 7" class="popular__photo">
+                </div>
+                <div class="popular-detail">
+                  <p class="popular-detail__title">Popular</p>
+                  <p class="popular-detail__desc">Best Dressed this week</p>
+                  <p class="popular-detail__text">
+                    Overseas, Natalie Portman gave the mo dark florals some love,
+                    stepping out in a black Valentino.
+                  </p>
+                  <p class="popular-detail__date">30 Jan 2016</p>
+                </div>
+                <div class="box-under">
+                  <br>
+                </div>
+                <div class="suggested">
+                  <div class="suggested-title">
+                    <div class="suggested-title__text">Suggested people</div>
+                    <svg class="suggested-title__icon">
+                      <use xlink:href="img/sprite.svg#icon-dots-two-vertical"></use>
+                    </svg>
+                  </div>
+                  <div class="suggested-list">
+                    <div class="people-list">
+                      <img src="img/user8.jpg" alt="User 8" class="people-list__photo">
+                      <div class="people-list__details">
+                        <p class="people-list__name">Susana Mendis</p>
+                        <p class="people-list__job-title">Fashion Designer</p>
+                      </div>
+                      <span class="people-list__add">+</span>
+                    </div>
+                    <div class="people-list">
+                      <img src="img/user9.jpg" alt="User 9" class="people-list__photo">
+                      <div class="people-list__details">
+                        <p class="people-list__name">Neel Litoriya</p>
+                        <p class="people-list__job-title">Cyber Punk</p>
+                      </div>
+                      <span class="people-list__add">+</span>
+                    </div>
+                    <div class="people-list">
+                      <img src="img/user10.jpg" alt="User 10" class="people-list__photo">
+                      <div class="people-list__details">
+                        <p class="people-list__name">Barbara Doe</p>
+                        <p class="people-list__job-title">Photographer</p>
+                      </div>
+                      <span class="people-list__add">+</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </body>

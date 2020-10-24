@@ -1,9 +1,21 @@
 // sidebar
 .sidebar {
-  .search {
-  
-  
+  padding: 0rem 4rem 9rem;
+
+  @media only screen and (max-width: $small-bp) {
     display: flex;
+    padding: 3rem;
+  }
+
+  .search {
+    margin-top: 3rem;
+
+    display: flex;
+
+    @media only screen and (max-width: $small-bp) {
+      margin-top: 0rem;
+      margin-bottom: 1.5rem;
+    }
 
     &__input {
       font-family: inherit;
@@ -12,6 +24,7 @@
       color: var(--color-light-grey);
       width: 80%;
       letter-spacing: .1rem;
+
     }
   
     ::placeholder {
@@ -34,17 +47,388 @@
   }
 
   .side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+
+    @media only screen and (max-width: $small-bp) {
+      display: flex;
+    }
+
     &__item {
-  
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 3.5rem;
+
+        @media only screen and (max-width: $small-bp) {
+          margin-bottom: 0rem;
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    &__item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -4rem;
+      height: 100%;
+      width: 5px;
+      background-color: var(--color-dark-grey);
+      justify-self: center;
+      transform: scaleY(0);
+    }
+
+    &__item:hover::before,
+    &__item--active::before {
+      transform: scaleY(1);
     }
   
-    &__link {
+    &__link:link,
+    &__link:visited {
+      color: var(--color-dark-grey);
+      font-weight: 600;
+      text-decoration: none;
+      display: block;
+      padding: .5rem 0rem;
+      letter-spacing: .1rem;
       
+      display: flex;
+      align-items:center;
     }
   
     &__icon {
-      width: 1.75rem;
-      height: 1.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 2rem;
+      fill: var(--color-light-grey);
+    }
+
+    &__icon:hover {
+      fill: var(--color-dark-grey);
+    }
+
+    &__notif {
+      color: var(--color-white);
+      background-color: var(--color-secondary);
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      margin-left: 6rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: $small-bp) {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .user-profile {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    letter-spacing: .1rem;
+    font-weight: 600;
+
+    @media only screen and (max-width: $small-bp) {
+      flex-direction: row;
+    }
+
+    &__user-photo {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 100px;
+      margin-bottom: 4rem;
+
+      @media only screen and (max-width: $small-bp) {
+        flex-direction: row;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+      }
+
+    }
+
+    .user-detail {
+      display: flex;
+      flex-direction: column;
+
+      &__username {
+        font-size: 2rem;
+      }
+  
+      &__job-title {
+        font-size: 1.5rem;
+        color: var(--color-light-grey);
+      }
+    }
+    
+  }
+}
+
+
+.feed {
+  .story {
+    height: 30%;
+    background-color: var(--color-background);
+    padding: 5rem 2rem 2rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    margin-bottom: 4rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__textarea {
+      border: none;
+      background-color: var(--color-background);
+      color: var(--color-dark-grey);
+      resize: none;
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__post-button {
+      color: var(--color-white);
+      background-color: var(--color-secondary);
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: .5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    &__icons {
+      display: flex;
+      flex: 0 0 25%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--color-dark-grey);
+    }
+  }
+
+  .posts {
+    letter-spacing: .08rem;
+    font-weight: 600;
+    
+    .post {
+      &__user {
+        display: flex;
+        padding: 2rem;
+      }
+  
+      &__user-photo {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 100px;
+        margin-right: 2rem;
+      }
+  
+      &__user-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: auto;
+      }
+  
+      &__username {
+        font-size: 1.7rem;
+      }
+  
+      &__user-title {
+        font-size: 1.4rem;
+        color: var(--color-light-grey);
+      }
+  
+      &__elapsed {
+        margin-top: 1.5rem;
+        color: var(--color-light-grey);
+        font-size: 1rem;
+      }
+  
+      &__text {
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: var(--color-dark-grey);
+        font-weight: 400;
+      }
+
+      &__icons {
+        display: flex;
+        margin-left: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      &__link:link,
+      &__link:visited {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--color-light-grey);
+        margin-right: 2rem;
+        font-size: 1.3rem;
+        
+        display: flex;
+        align-items: center;
+      }
+
+      &__link:hover {
+        color: var(--color-secondary);
+      }
+
+      &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: .8rem;
+        fill: currentColor;
+      }
+
+      &__photos {
+        display: flex;
+        overflow: hidden;
+      }
+
+      &__photo {
+        margin-left: 2rem;
+        width: 35%;
+        display: block;
+        border-radius: .5rem;
+      }
+    }
+  }
+}
+
+
+.sidebar-right {
+  flex-direction: column;
+
+  .popular {
+    display: flex;
+    height: 31%;
+    background-color: var(--color-background);
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+
+    &__photo {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .popular-detail {
+    padding: 1.5rem;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: var(--color-white);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+
+    &__title {
+      color: var(--color-secondary);
+    }
+
+    &__desc {
+      font-size: 1.6rem;
+      padding: 1rem 0rem;
+    }
+
+    &__text {
+      color: var(--color-light-grey);
+      text-align: justify;
+    }
+
+    &__date {
+      font-size: 1rem;
+      color: var(--color-light-grey);
+      text-align: right;
+    }
+  }
+
+  .box-under {
+    background-color: var(--color-box-under);
+    margin: 0rem 2rem 2rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+  }
+
+  .suggested {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: .5rem;
+    font-weight: 600;
+
+    .suggested-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 1rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__icon {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-light-grey);
+      }
+    }
+
+    .suggested-list {
+      margin: 2.5rem 0rem 0rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: space-between;
+
+      .people-list {
+        display: flex;
+        align-items: center;
+        margin: 1.5rem 0rem;
+
+        &__photo {
+          width: 5.5rem;
+          height: 5.5rem;
+          border-radius: 100px;
+          margin-right: 1rem;
+        }
+
+        &__details {
+          margin-right: auto;
+          letter-spacing: .05rem;
+        }
+
+        &__name {
+          font-size: 1.5rem;
+          color: var(--color-secondary);
+        }
+
+        &__job-title {
+          color: var(--color-light-grey);
+        }
+
+        &__add {
+          font-size: 1.8rem;
+          background-color: var(--color-light-grey);
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+    
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
   }
 }
